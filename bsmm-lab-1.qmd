@@ -11,6 +11,7 @@ self-contained: true
 ## Setup
 
 Load packages and data:
+
 ```{r}
 install.packages("Lahman")
 ```
@@ -30,7 +31,6 @@ library(tidyverse)
 
 ```
 
-
 ```{r glimpse-data}
 library(Lahman)
 dim(Teams)
@@ -41,9 +41,11 @@ dplyr::glimpse(Teams)
 The `Teams` dataset has 3015 observations and 48 variables.
 
 ### Exercise 2
+
 ```{r Ben Baumer worked for the New York Mets from 2004 to 2012}
 view(Teams)
 ```
+
 ```{r}
 mets <- Teams  %>% 
   dplyr::filter(teamID == "NYN")
@@ -56,12 +58,14 @@ my_mets %>%
 ...
 
 ### Exercise 3
+
 ```{r}
 mets_ben <- Teams %>%
   dplyr::select(yearID, teamID, R, RA, W, L) %>%
   dplyr::filter(teamID == "NYN" & yearID %in% 2004:2012)
 
 ```
+
 ```{r}
 view(mets_ben)
 ```
@@ -72,7 +76,6 @@ mets_ben <- mets_ben |>
 mets_ben
 ```
 
-
 ### Exercise 4
 
 ```{r}
@@ -80,6 +83,7 @@ install.packages("dplyr")
 
 
 ```
+
 ```{r}
 
 library(dplyr)
@@ -96,7 +100,6 @@ install.packages("magrittr")
 library(magrittr)
 ```
 
-
 ```{r}
 mets_ben <- mets_ben %>%
   dplyr::mutate(WPct = 1 / (1 + (RA / RS) * 2))
@@ -107,7 +110,6 @@ mets_ben <- mets_ben %>%
 View(mets_ben)
 ```
 
-
 ```{r}
 mets_ben <- mets_ben %>%
   dplyr::mutate(W_hat = WPct * (W ))
@@ -115,13 +117,7 @@ mets_ben <- mets_ben %>%
 
 ...
 
-
-
-
 ### Exercise 5
-
-
-
 
 ```{r}
 
@@ -132,7 +128,6 @@ mets_ben <- mets_ben %>%
 mets_ben
 
 ```
-
 
 ```{r}
 library(dplyr)
@@ -147,14 +142,12 @@ print(summary_stats)
 
 ### Exercise 6
 
-
 ```{r}
 best_seasons <- dplyr::arrange(mets_ben, desc(W))
 
 best_seasons
 
 ```
-
 
 ...
 
@@ -190,6 +183,7 @@ mets_ben |>
 ...
 
 ### Exercise 9
+
 ```{r}
 
 ```
@@ -198,11 +192,9 @@ mets_ben |>
 
 ### Exercise 10
 
-
 ```{r}
 
 ```
-
 
 ```{r}
 
@@ -221,13 +213,12 @@ mets_ben <- mets_ben %>%
 
 
 ```
+
 ```{r}
 mets_ben
 ```
 
-
-...
-# Excercise 11
+... \# Excercise 11
 
 ```{r Group by the manager (gm) variable and summarize the data}
  
@@ -246,4 +237,3 @@ manager_summary
 
 
 ```
-
