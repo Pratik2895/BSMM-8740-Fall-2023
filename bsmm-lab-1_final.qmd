@@ -181,7 +181,7 @@ mets_ben |>
 ### Exercise 9
 
 ```{r}
-
+# Data for this excercise is not given
 ```
 
 ...
