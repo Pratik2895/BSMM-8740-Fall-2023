@@ -40,11 +40,6 @@ dplyr::glimpse(Teams)
 
 The `Teams` dataset has 3015 observations and 48 variables.
 
-```{r}
-help(Teams)
-
-```
-
 ### Exercise 2
 
 ```{r Ben Baumer worked for the New York Mets from 2004 to 2012}
@@ -152,7 +147,7 @@ best_seasons
 ```{r}
 mets_ben <-mets_ben %>% 
   dplyr::mutate(Diff = W -W_hat) |>
-  dplyr::arrange(Diff)
+  dplyr::arrange(desc(Diff))
 
 
 ```
@@ -214,7 +209,7 @@ mets_ben <- mets_ben %>%
 mets_ben
 ```
 
-... \# Excercise 11
+### Exercise 11
 
 ```{r Group by the manager (gm) variable and summarize the data}
  
