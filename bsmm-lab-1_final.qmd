@@ -85,7 +85,7 @@ mets_ben
 
 ```{r}
 mets_ben <- mets_ben %>%
-  dplyr::mutate(WPct = 1 / (1 + (RA / RS) * 2))
+  dplyr::mutate(WPct = 1 / (1 + (RA / RS) ^ 2))
 
 ```
 
@@ -102,7 +102,7 @@ mets_ben
 
 ```{r}
 mets_ben <- mets_ben |>
-  dplyr::mutate(W_hat =WPct*G)
+  dplyr::mutate(W_hat =WPct*(W+L))
 mets_ben
 ```
 
